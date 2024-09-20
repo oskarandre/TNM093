@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Copyright 2013, 2017, Karljohan Lundin Palmerius
+
+This is a stubb for laborations on multi-modal display
+systems in the VR laboratory. It will disable the X3D
+navigation to allow for viewpoint calibration and tracking,
+and load libraries commonly used in the VR laboratory.
+
+-->
+<Group>
+  
+  <PythonScript url="urn:candy:python/CorrectViewpoint.py"/>
+  
+  <PythonScript url="urn:candy:python/AutoLoadSO.py"/>
+  
+ <PythonScript url="ColorRandomizer.py"/>
+  <!-- Put your code here -->
+  
+  <Group>
+
+  <Transform rotation="0.257 -0.950 -0.181 1.175"
+        scale="0.2 0.2 0.2">
+  <Transform DEF="LEG"
+        translation="0 0 0">
+    <Shape>
+        <Appearance><Material diffuseColor="0.9 0.9 0.9"/></Appearance>
+            <Box size="0.05 0.5 0.05"/>
+    </Shape>
+  </Transform>
+  
+    <Transform DEF="LEG_1"
+            translation="0.5 0 0">
+        <Shape USE="LEG"/>
+    </Transform>
+    
+    <Transform DEF="LEG_2"
+            translation="0.5 0 0.5">
+        <Shape USE="LEG"/>
+    </Transform>
+    
+    <Transform DEF="LEG_3"
+            translation="0 0 0.5">
+        <Shape USE="LEG"/>
+    </Transform>
+    
+    
+  
+    <Transform DEF="TOP"
+        translation="0.25 0.25 0.25">
+            <Shape DEF="H_SHAPE">
+                <Appearance><Material diffuseColor="0.8 0.35 0.9"/></Appearance>
+                    <Box size="0.6 0.025 0.6"/>
+            </Shape>
+            </Transform>
+            
+        <Transform DEF="BACK"
+        translation="0 0.65 0.25">
+            <Shape DEF="H_SHAPE">
+                <Appearance>
+                    <Material diffuseColor="0.8 0.35 0.9"/>
+                        <SmoothSurface stiffness="0.6" damping="0.5" useRelativeValues="true"/>
+                    </Appearance>
+                    <Box size="0.025 0.8 0.6"/>
+            </Shape>    
+        
+    </Transform>
+    </Transform>
+  </Group>
+  
+  
+</Group>
